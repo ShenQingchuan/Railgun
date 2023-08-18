@@ -1,23 +1,16 @@
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDarkMode } from '../hooks/useDarkMode'
 import viteLogo from '/vite.svg'
 import { locales } from '../i18n/locales'
+import { useIsDark, useThemeActions } from '../providers/dark-mode'
 
+function ThemeCheck() {
+  const { toggle } = useThemeActions()
+  const isDarkMode = useIsDark()
+
+  return <input type="checkbox" checked={isDarkMode} onChange={toggle} />
+}
 export function Footer() {
-  const { toggle, isDarkMode } = useDarkMode()
   const { t, i18n } = useTranslation()
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.dataset.theme = 'business'
-      document.documentElement.classList.toggle('dark', true)
-    }
-    else {
-      document.documentElement.dataset.theme = 'bumblebee'
-      document.documentElement.classList.toggle('dark', false)
-    }
-  }, [isDarkMode])
 
   return (
     <div className='flex flex-col items-center'>
@@ -62,7 +55,7 @@ export function Footer() {
       </div>
       <div className='flex justify-center items-center mt-4'>
         <label className='swap btn btn-ghost btn-sm rounded-md mx-2'>
-          <input type="checkbox" checked={isDarkMode} onChange={toggle} />
+        <ThemeCheck />
           <div className='swap-on flex justify-center items-center'>
             <div className='i-carbon-moon' />
             <span className='ml-2'>{t('dark-mode')}</span>

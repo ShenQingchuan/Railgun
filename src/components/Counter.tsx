@@ -1,10 +1,11 @@
-import { useAtom } from 'jotai'
+import { useAtomValue, useSetAtom } from 'jotai'
 import { counterAtom } from '../atoms/counter'
+import { useEventCallback } from '../hooks/useEventCallback'
 
 export function Counter() {
-  const [count, setCount] = useAtom(counterAtom)
-  const increment = () => setCount(c => c + 1)
-  const decrement = () => setCount(c => c - 1)
+  const setCount = useSetAtom(counterAtom)
+  const increment = useEventCallback(() => setCount(c => c + 1))
+  const decrement = useEventCallback(() => setCount(c => c - 1))
 
   return (
     <div className="flex justify-center items-center mt-4 mb-8">
@@ -24,7 +25,7 @@ export function Counter() {
           select-none
         "
       >
-        <samp>Count: {count}</samp>
+        <samp>Count: <Count /></samp>
       </div>
       <button
         className="btn btn-ghost btn-circle text-[1.5rem] mx-2"
@@ -35,4 +36,9 @@ export function Counter() {
       </button>
     </div>
   )
+}
+
+function Count() {
+  const count = useAtomValue(counterAtom)
+  return count
 }
