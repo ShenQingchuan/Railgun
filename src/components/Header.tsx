@@ -16,7 +16,7 @@ export function Header() {
         className="
           h-48 -rotate-12 -m-6
           will-change-filter
-          trasition-[filter]
+          transition-[filter]
           duration-300
           drop-shadow-[0_0_1em_#ff9c6556]
           hover:drop-shadow-[0_0_1em_#ff9c65cc]
