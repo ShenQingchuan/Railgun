@@ -11,7 +11,8 @@
     "deps:update": "taze",
     "deps:upgrade": "taze -w",
     "test:e2e": "cross-env NODE_ENV=test playwright test",
-    "test:e2e:ci": "cross-env CI=true NODE_ENV=test playwright test"
+    "test:e2e:ci": "cross-env CI=true NODE_ENV=test playwright test",
+    "postinstall": "simple-git-hooks"
   },
   "dependencies": {
     "@egoist/tailwindcss-icons": "^1.1.0",
