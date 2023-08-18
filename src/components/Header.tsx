@@ -1,8 +1,8 @@
 import RailgunLogo from '../assets/railgun.png'
-import { useTraslator } from '../hooks/useTranslator'
+import { useTranslator } from '../hooks/useTranslator'
 
 export function Header() {
-  const t = useTraslator()
+  const t = useTranslator()
 
   return (
     <div
