@@ -32,7 +32,7 @@ export function Footer() {
               logo
               h-6 mx-2
               will-change-filter
-              trasition-[filter]
+              transition-[filter]
               duration-300
               hover:drop-shadow-[0_0_1em_#646cffaa]
             "
