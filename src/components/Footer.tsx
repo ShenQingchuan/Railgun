@@ -83,7 +83,9 @@ export function Footer() {
                 key={lang}
                 value={lang}
                 label={it.nativeName ?? lang}
-              />
+              >
+                {it.nativeName ?? lang}
+              </option>
             ))
           }
         </select>
