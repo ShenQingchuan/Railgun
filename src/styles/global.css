@@ -1,0 +1,20 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+code,
+samp {
+  font-family: 'Fira Code', Menlo, Consolas, monospace;
+}
