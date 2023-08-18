@@ -1,10 +1,10 @@
-import { useAtom } from "jotai";
-import { counterAtom } from "../atoms/counter";
+import { useAtom } from 'jotai'
+import { counterAtom } from '../atoms/counter'
 
 export function Counter() {
-  const [count, setCount] = useAtom(counterAtom);
-  const increment = () => setCount((c) => c + 1);
-  const decrement = () => setCount((c) => c - 1);
+  const [count, setCount] = useAtom(counterAtom)
+  const increment = () => setCount(c => c + 1)
+  const decrement = () => setCount(c => c - 1)
 
   return (
     <div className="flex justify-center items-center mt-4 mb-8">
@@ -34,5 +34,5 @@ export function Counter() {
         <div className="i-carbon-subtract" />
       </button>
     </div>
-  );
+  )
 }
