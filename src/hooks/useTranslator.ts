@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation as useTranslationImpl } from 'react-i18next'
 
-export function useTranslator() {
-  const { t } = useTranslation()
+export function useTranslation() {
+  const { t } = useTranslationImpl()
   return t
 }
