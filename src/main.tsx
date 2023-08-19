@@ -7,6 +7,7 @@ import { router } from './router'
 import './i18n'
 import './styles/tailwind.css'
 import './styles/global.css'
+import { Providers } from './providers'
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <Providers>
+      <App />
+    </Providers>
   </React.StrictMode>,
 )
