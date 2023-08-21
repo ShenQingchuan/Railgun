@@ -45,3 +45,4 @@ Recommended Node.js version: `>=18`
 - Using [Taze](https://github.com/antfu/taze) to manage dependencies update
 - Using [vite-plugin-webfont-dl](https://github.com/feat-agency/vite-plugin-webfont-dl) to handle Web Fonts downloading
 - Using [vite-plugin-mkcert](https://github.com/liuweiGL/vite-plugin-mkcert) for local HTTPS development
+- Using [Netlify](https://netlify.com) for deployment
