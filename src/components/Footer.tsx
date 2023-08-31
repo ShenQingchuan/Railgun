@@ -54,8 +54,15 @@ export function Footer() {
         <span>{t('click-go-docs-site')}</span>
       </div>
       <div className='flex justify-center items-center mt-4'>
+        <a
+          className='btn btn-ghost btn-sm rounded-md flex justify-center items-center'
+          href='https://github.com/ShenQingchuan/Railgun'
+        >
+          <div className='i-carbon-logo-github' />
+          <span className='ml-2'>Github</span>
+        </a>
         <label className='swap btn btn-ghost btn-sm rounded-md mx-2'>
-        <ThemeCheck />
+          <ThemeCheck />
           <div className='swap-on flex justify-center items-center'>
             <div className='i-carbon-moon' />
             <span className='ml-2'>{t('dark-mode')}</span>
