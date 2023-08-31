@@ -1,4 +1,4 @@
-# Railgun
+# Railgun [![Netlify Status](https://api.netlify.com/api/v1/badges/cf0b8282-ebeb-4c61-8e27-240223caa96b/deploy-status)](https://app.netlify.com/sites/railgun/deploys)
 
 <div align="center">
   <image 
