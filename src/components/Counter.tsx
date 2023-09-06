@@ -4,8 +4,8 @@ import { useEventCallback } from '../hooks/useEventCallback'
 
 export function Counter() {
   const setCount = useSetAtom(counterAtom)
-  const increment = useEventCallback(() => setCount(c => c + 1))
-  const decrement = useEventCallback(() => setCount(c => c - 1))
+  const increment = useEventCallback(() => setCount(c => c + 1), [])
+  const decrement = useEventCallback(() => setCount(c => c - 1), [])
 
   return (
     <div className="flex justify-center items-center mt-4 mb-8">

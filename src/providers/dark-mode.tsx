@@ -7,13 +7,10 @@ import { jotaiStore } from '../lib/store'
 const darkModeAtom = atomWithStorage('dark-mode', false)
 
 const actions = {
-  // TODO
   toggle: () => jotaiStore.set(darkModeAtom, prev => !prev),
 }
 
-const DarkModeActionContext = createContext<
-  typeof actions
-  >(null!)
+const DarkModeActionContext = createContext<typeof actions>({} as typeof actions)
 const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)'
 
 function getMatches(query: string): boolean {
@@ -24,8 +21,6 @@ function getMatches(query: string): boolean {
 }
 
 export function DarkModeProvider(props: PropsWithChildren) {
-  // const isOSDark = useMediaQuery(COLOR_SCHEME_QUERY)
-
   useEffect(() => {
     const matchMedia = window.matchMedia(COLOR_SCHEME_QUERY)
     // Triggered at the first client-side load and if query changes
@@ -38,10 +33,12 @@ export function DarkModeProvider(props: PropsWithChildren) {
       matchMedia.removeEventListener('change', handleChange)
     }
   }, [])
-  return <DarkModeActionContext.Provider value={actions}>
-    {props.children}
-    <ThemeObserver />
-  </DarkModeActionContext.Provider>
+  return (
+    <DarkModeActionContext.Provider value={actions}>
+      {props.children}
+      <ThemeObserver />
+    </DarkModeActionContext.Provider>
+  )
 }
 
 function ThemeObserver() {
